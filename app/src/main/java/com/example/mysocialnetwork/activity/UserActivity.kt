@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.mysocialnetwork.R
@@ -27,7 +26,13 @@ class UserActivity : AppCompatActivity() {
                 resources.getIdentifier("imgProfileIcon", "id", packageName)
             )
             imgViewIcon.setImageDrawable(
-                getDrawable(resources.getIdentifier(it.usersList[id!!].profilePhoto, null, packageName))
+                getDrawable(
+                    resources.getIdentifier(
+                        it.usersList[id!!].profilePhoto,
+                        null,
+                        packageName
+                    )
+                )
             )
 
             val txtViewName = findViewById<TextView>(
