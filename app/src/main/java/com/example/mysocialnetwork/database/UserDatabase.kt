@@ -9,7 +9,7 @@ import com.example.mysocialnetwork.user.User
 @Database(entities = [User::class], version = 1)
 abstract class UserDatabase : RoomDatabase() {
 
-    abstract fun userDatabaseDao(): UserDatabaseDao
+    abstract val userDatabaseDao: UserDatabaseDao
 
     companion object {
 

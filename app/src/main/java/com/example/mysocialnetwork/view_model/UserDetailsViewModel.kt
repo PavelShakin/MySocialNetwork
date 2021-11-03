@@ -13,13 +13,9 @@ class UserDetailsViewModel(application: Application) : AndroidViewModel(applicat
     private val _userLiveData = MutableLiveData<User>()
     val userLiveData: LiveData<User> = _userLiveData
 
-    private val database = UserDatabase.getInstance(application).userDatabaseDao()
+    private val database = UserDatabase.getInstance(application).userDatabaseDao
 
     fun loadUserData(id: Int) {
         _userLiveData.value = database.get(id)
-    }
-
-    fun updateUserInfo(user: User) {
-        database.update(user)
     }
 }

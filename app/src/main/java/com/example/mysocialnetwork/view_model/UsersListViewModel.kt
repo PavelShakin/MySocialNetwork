@@ -14,7 +14,7 @@ class UsersListViewModel(application: Application) : AndroidViewModel(applicatio
     private val _userLiveData = MutableLiveData<List<User>>()
     val userLiveData: LiveData<List<User>> = _userLiveData
 
-    private val database = UserDatabase.getInstance(application).userDatabaseDao()
+    private val database = UserDatabase.getInstance(application).userDatabaseDao
 
     fun fillUpDatabase() {
         if (database.isEmpty() == null) {
