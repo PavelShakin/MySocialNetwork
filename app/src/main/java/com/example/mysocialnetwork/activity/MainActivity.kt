@@ -30,17 +30,17 @@ class MainActivity : AppCompatActivity() {
                 )
 
                 val txtViewName = findViewById<TextView>(
-                    resources.getIdentifier("usrName$id", "id", packageName)
+                    resources.getIdentifier("txtUserName$id", "id", packageName)
                 )
                 txtViewName.text = it[id].name
 
                 val txtViewTime = findViewById<TextView>(
-                    resources.getIdentifier("usrTime$id", "id", packageName)
+                    resources.getIdentifier("txtUserTime$id", "id", packageName)
                 )
                 txtViewTime.text = it[id].wasOnline
 
                 val imgViewIcon = findViewById<ImageView>(
-                    resources.getIdentifier("profileIcon$id", "id", packageName)
+                    resources.getIdentifier("imgProfileIcon$id", "id", packageName)
                 )
                 imgViewIcon.setImageDrawable(
                     getDrawable(
