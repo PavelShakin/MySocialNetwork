@@ -10,21 +10,21 @@ data class User(
     @PrimaryKey
     val userId: Int,
 
-    @ColumnInfo(name = "users_full_name")
+    @ColumnInfo(name = "name")
     var name: String,
 
-    @ColumnInfo(name = "users_profile_photo")
+    @ColumnInfo(name = "profile_photo")
     val profilePhoto: String,
 
-    @ColumnInfo(name = "user_was_online_time")
+    @ColumnInfo(name = "was_online")
     val wasOnline: String,
 
-    @ColumnInfo(name = "users_hobby")
+    @ColumnInfo(name = "hobby")
     var hobby: String,
 
-    @ColumnInfo(name = "users_email")
+    @ColumnInfo(name = "email")
     var email: String,
 
-    @ColumnInfo(name = "users_status")
+    @ColumnInfo(name = "status")
     var status: String
 )
