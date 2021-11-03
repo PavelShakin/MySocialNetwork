@@ -9,15 +9,16 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProvider
 import com.example.mysocialnetwork.R
 import com.example.mysocialnetwork.user.User
+import com.example.mysocialnetwork.view_model.EditUserViewModel
 import com.example.mysocialnetwork.view_model.UserDetailsViewModel
 
 class EditUserActivity : AppCompatActivity() {
-    private lateinit var viewModel: UserDetailsViewModel
+    private lateinit var viewModel: EditUserViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.edit_user_activity)
-        viewModel = ViewModelProvider(this).get(UserDetailsViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(EditUserViewModel::class.java)
         val id = intent.extras?.getInt("id")
         viewModel.loadUserData(id!!)
 
@@ -44,11 +45,8 @@ class EditUserActivity : AppCompatActivity() {
         })
 
         val updateButton = findViewById<Button>(R.id.btnUpdate)
-        setOnClickListener(updateButton, id)
-    }
 
-    private fun setOnClickListener(button: Button, id: Int) {
-        button.setOnClickListener {
+        updateButton.setOnClickListener {
             updateUserInfo()
             val intent = Intent(this, UserActivity::class.java)
             intent.putExtra("id", id)
