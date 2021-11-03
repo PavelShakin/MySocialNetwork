@@ -23,24 +23,24 @@
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/profileIcon0"
+                app:layout_constraintStart_toEndOf="@+id/imgProfileIcon0"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/usrName0"
+                    android:id="@+id/txtUserName0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/usrTime0"
+                    android:id="@+id/txtUserTime0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/profileIcon0"
+                android:id="@+id/imgProfileIcon0"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -59,24 +59,24 @@
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/profileIcon1"
+                app:layout_constraintStart_toEndOf="@+id/imgProfileIcon1"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/usrName1"
+                    android:id="@+id/txtUserName1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/usrTime1"
+                    android:id="@+id/txtUserTime1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/profileIcon1"
+                android:id="@+id/imgProfileIcon1"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -96,24 +96,24 @@
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/profileIcon2"
+                app:layout_constraintStart_toEndOf="@+id/imgProfileIcon2"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/usrName2"
+                    android:id="@+id/txtUserName2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/usrTime2"
+                    android:id="@+id/txtUserTime2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/profileIcon2"
+                android:id="@+id/imgProfileIcon2"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -132,24 +132,24 @@
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/profileIcon3"
+                app:layout_constraintStart_toEndOf="@+id/imgProfileIcon3"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/usrName3"
+                    android:id="@+id/txtUserName3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/usrTime3"
+                    android:id="@+id/txtUserTime3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/profileIcon3"
+                android:id="@+id/imgProfileIcon3"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -168,24 +168,24 @@
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/profileIcon4"
+                app:layout_constraintStart_toEndOf="@+id/imgProfileIcon4"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/usrName4"
+                    android:id="@+id/txtUserName4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/usrTime4"
+                    android:id="@+id/txtUserTime4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/profileIcon4"
+                android:id="@+id/imgProfileIcon4"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -204,24 +204,24 @@
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/profileIcon5"
+                app:layout_constraintStart_toEndOf="@+id/imgProfileIcon5"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/usrName5"
+                    android:id="@+id/txtUserName5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/usrTime5"
+                    android:id="@+id/txtUserTime5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/profileIcon5"
+                android:id="@+id/imgProfileIcon5"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -240,24 +240,24 @@
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/profileIcon6"
+                app:layout_constraintStart_toEndOf="@+id/imgProfileIcon6"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/usrName6"
+                    android:id="@+id/txtUserName6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/usrTime6"
+                    android:id="@+id/txtUserTime6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/profileIcon6"
+                android:id="@+id/imgProfileIcon6"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -276,24 +276,24 @@
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/profileIcon7"
+                app:layout_constraintStart_toEndOf="@+id/imgProfileIcon7"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/usrName7"
+                    android:id="@+id/txtUserName7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/usrTime7"
+                    android:id="@+id/txtUserTime7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/profileIcon7"
+                android:id="@+id/imgProfileIcon7"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -312,24 +312,24 @@
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/profileIcon8"
+                app:layout_constraintStart_toEndOf="@+id/imgProfileIcon8"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/usrName8"
+                    android:id="@+id/txtUserName8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/usrTime8"
+                    android:id="@+id/txtUserTime8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/profileIcon8"
+                android:id="@+id/imgProfileIcon8"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 app:layout_constraintStart_toStartOf="parent"
