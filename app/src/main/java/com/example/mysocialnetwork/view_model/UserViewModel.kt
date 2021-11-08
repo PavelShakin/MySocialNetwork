@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel
 import com.example.mysocialnetwork.database.UserDatabase
 import com.example.mysocialnetwork.user.User
 
-class UserDetailsViewModel(application: Application) : AndroidViewModel(application) {
+class UserViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _userLiveData = MutableLiveData<User>()
     val userLiveData: LiveData<User> = _userLiveData

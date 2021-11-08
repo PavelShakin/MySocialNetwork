@@ -10,16 +10,16 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.mysocialnetwork.R
-import com.example.mysocialnetwork.view_model.UserDetailsViewModel
+import com.example.mysocialnetwork.view_model.UserViewModel
 
 class UserActivity : AppCompatActivity() {
-    private lateinit var viewModel: UserDetailsViewModel
+    private lateinit var viewModel: UserViewModel
 
     @SuppressLint("UseCompatLoadingForDrawables", "SetTextI18n", "ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.user_activity)
-        viewModel = ViewModelProvider(this).get(UserDetailsViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         val id = intent.extras?.getInt("id")
         viewModel.loadUserData(id!!)
 

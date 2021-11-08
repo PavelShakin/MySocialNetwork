@@ -2,15 +2,12 @@ package com.example.mysocialnetwork.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProvider
 import com.example.mysocialnetwork.R
 import com.example.mysocialnetwork.user.User
 import com.example.mysocialnetwork.view_model.EditUserViewModel
-import com.example.mysocialnetwork.view_model.UserDetailsViewModel
 
 class EditUserActivity : AppCompatActivity() {
     private lateinit var viewModel: EditUserViewModel

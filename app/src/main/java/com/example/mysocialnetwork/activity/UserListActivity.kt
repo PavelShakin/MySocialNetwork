@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.mysocialnetwork.R
 import com.example.mysocialnetwork.view_model.UsersListViewModel
 
-class MainActivity : AppCompatActivity() {
+class UserListActivity : AppCompatActivity() {
     private lateinit var viewModel: UsersListViewModel
 
     @SuppressLint("UseCompatLoadingForDrawables")
