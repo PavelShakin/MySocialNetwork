@@ -20,5 +20,6 @@
         </activity>
         <activity android:name=".activity.UserActivity"/>
         <activity android:name=".activity.EditUserActivity"/>
+        <activity android:name=".activity.AddUserActivity"/>
     </application>
 </manifest>

@@ -3,13 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/pashk/AndroidStudioProjects/MySocialNetwork/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/pashk/AndroidStudioProjects/MySocialNetwork/app/src/main/res/drawable/border.xml" value="0.23981481481481481" />
+        <entry key="..\:/Users/pashk/AndroidStudioProjects/MySocialNetwork/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/pashk/AndroidStudioProjects/MySocialNetwork/app/src/main/res/drawable/ic_user1.xml" value="0.23981481481481481" />
         <entry key="..\:/Users/pashk/AndroidStudioProjects/MySocialNetwork/app/src/main/res/drawable/ic_user2.xml" value="0.23981481481481481" />
         <entry key="..\:/Users/pashk/AndroidStudioProjects/MySocialNetwork/app/src/main/res/drawable/ic_user6.xml" value="0.2703125" />
         <entry key="..\:/Users/pashk/AndroidStudioProjects/MySocialNetwork/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/pashk/AndroidStudioProjects/MySocialNetwork/app/src/main/res/layout/add_user_activity.xml" value="0.2" />
         <entry key="..\:/Users/pashk/AndroidStudioProjects/MySocialNetwork/app/src/main/res/layout/edit_user_activity.xml" value="0.264" />
         <entry key="..\:/Users/pashk/AndroidStudioProjects/MySocialNetwork/app/src/main/res/layout/user_activity.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/pashk/AndroidStudioProjects/MySocialNetwork/app/src/main/res/layout/user_list_activity.xml" value="0.176" />
+        <entry key="..\:/Users/pashk/AndroidStudioProjects/MySocialNetwork/app/src/main/res/layout/user_list_item.xml" value="0.18614130434782608" />
+        <entry key="..\:/Users/pashk/AndroidStudioProjects/MySocialNetwork/app/src/main/res/menu/menu_add_user.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/pashk/AndroidStudioProjects/MySocialNetwork/app/src/main/res/menu/menu_edit_user.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/pashk/AndroidStudioProjects/MySocialNetwork/app/src/main/res/menu/menu_user.xml" value="0.25416666666666665" />
       </map>
     </option>

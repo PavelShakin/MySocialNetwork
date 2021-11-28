@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">MySocialNetwork</string>
-    <string name="update">Update</string>
-    <string name="edit">Edit</string>
+    <string name="btnUpdateEditedUser">Update</string>
+    <string name="edit_user">Edit user</string>
+    <string name="add_user">Add new user</string>
+    <string name="editText_setUsername">Username</string>
+    <string name="editText_setWasOnline">Was online</string>
+    <string name="editText_setHobby">Hobby</string>
+    <string name="editText_setEmail">Email</string>
+    <string name="editText_setStatus">Status</string>
+    <string name="btnSaveNewUser">Save</string>
 </resources>

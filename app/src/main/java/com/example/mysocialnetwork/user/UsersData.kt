@@ -1,19 +1,7 @@
 package com.example.mysocialnetwork.user
 
 class UsersData {
-    companion object {
-        const val phPath1 = "@drawable/ic_user1"
-        const val phPath2 = "@drawable/ic_user2"
-        const val phPath3 = "@drawable/ic_user3"
-        const val phPath4 = "@drawable/ic_user4"
-        const val phPath5 = "@drawable/ic_user5"
-        const val phPath6 = "@drawable/ic_user6"
-        const val phPath7 = "@drawable/ic_user7"
-        const val phPath8 = "@drawable/ic_user8"
-        const val phPath9 = "@drawable/ic_user9"
-    }
-
-    var usersList = listOf(
+    private var usersList: MutableList<User> = mutableListOf(
         User(
             0, "Jon", phPath1, "was online 1 hour ago", "Reading",
             "bkslvr1987@gmail.com", "Enjoy reading"
@@ -51,4 +39,24 @@ class UsersData {
             "zzzzzz@gmail.com", "Sleep, eat, repeat"
         )
     )
+
+    companion object {
+        const val phPath1 = "@drawable/ic_user1"
+        const val phPath2 = "@drawable/ic_user2"
+        const val phPath3 = "@drawable/ic_user3"
+        const val phPath4 = "@drawable/ic_user4"
+        const val phPath5 = "@drawable/ic_user5"
+        const val phPath6 = "@drawable/ic_user6"
+        const val phPath7 = "@drawable/ic_user7"
+        const val phPath8 = "@drawable/ic_user8"
+        const val phPath9 = "@drawable/ic_user9"
+    }
+
+    fun getUsersData(): List<User> {
+        return usersList
+    }
+
+    fun addNewUser(user: User) {
+        usersList.add(user)
+    }
 }

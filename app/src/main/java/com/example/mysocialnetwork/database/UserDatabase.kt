@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.mysocialnetwork.user.User
 
-@Database(entities = [User::class], version = 1)
+@Database(entities = [User::class], version = 3)
 abstract class UserDatabase : RoomDatabase() {
 
     abstract val userDatabaseDao: UserDatabaseDao

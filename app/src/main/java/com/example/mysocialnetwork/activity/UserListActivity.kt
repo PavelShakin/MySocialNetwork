@@ -2,66 +2,69 @@ package com.example.mysocialnetwork.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.lifecycle.Observer
+import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.mysocialnetwork.R
+import com.example.mysocialnetwork.adapter.OnUserClick
+import com.example.mysocialnetwork.adapter.UserAdapter
+import com.example.mysocialnetwork.databinding.UserListActivityBinding
+import com.example.mysocialnetwork.user.UsersData
 import com.example.mysocialnetwork.view_model.UsersListViewModel
 
-class UserListActivity : AppCompatActivity() {
+class UserListActivity : AppCompatActivity(), OnUserClick {
     private lateinit var viewModel: UsersListViewModel
+    private lateinit var binding: UserListActivityBinding
+    private var userAdapter = UserAdapter(this as OnUserClick)
 
-    @SuppressLint("UseCompatLoadingForDrawables")
+    @SuppressLint("UseCompatLoadingForDrawables", "ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = UserListActivityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        initAdapter()
+        userAdapter.currentList = UsersData().getUsersData()
+
         viewModel = ViewModelProvider(this).get(UsersListViewModel::class.java)
         viewModel.fillUpDatabase()
         viewModel.loadUsersData()
 
-        viewModel.userLiveData.observe(this, {
-            for (id in 0..8) {
-                val layout = findViewById<ConstraintLayout>(
-                    resources.getIdentifier("user$id", "id", packageName)
-                )
-
-                val txtViewName = findViewById<TextView>(
-                    resources.getIdentifier("txtUserName$id", "id", packageName)
-                )
-                txtViewName.text = it[id].name
-
-                val txtViewTime = findViewById<TextView>(
-                    resources.getIdentifier("txtUserTime$id", "id", packageName)
-                )
-                txtViewTime.text = it[id].wasOnline
-
-                val imgViewIcon = findViewById<ImageView>(
-                    resources.getIdentifier("imgProfileIcon$id", "id", packageName)
-                )
-                imgViewIcon.setImageDrawable(
-                    getDrawable(
-                        resources.getIdentifier(
-                            it[id].profilePhoto,
-                            null,
-                            packageName
-                        )
-                    )
-                )
-
-                setOnClickListener(layout, id)
-            }
+        viewModel.getUsersData().observe(this, {
+            userAdapter.currentList
         })
+
     }
 
-    private fun setOnClickListener(layout: ConstraintLayout, id: Int) {
-        layout.setOnClickListener {
-            val intent = Intent(this, UserActivity::class.java)
-            intent.putExtra("id", id)
-            startActivity(intent)
+    private fun initAdapter() {
+        binding.recyclerView.apply {
+            adapter = userAdapter
+        }
+    }
+
+    override fun onClick(userId: Int) {
+        val intent = Intent(this, UserActivity::class.java)
+        intent.putExtra("id", userId)
+        startActivity(intent)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_add_user, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        return when (item.itemId) {
+            R.id.addItem-> {
+                val intent = Intent(this, AddUserActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

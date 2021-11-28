@@ -12,13 +12,13 @@ class UsersListViewModel(application: Application) : AndroidViewModel(applicatio
     private var usersData: UsersData = UsersData()
 
     private val _userLiveData = MutableLiveData<List<User>>()
-    val userLiveData: LiveData<List<User>> = _userLiveData
+    private val userLiveData: LiveData<List<User>> = _userLiveData
 
     private val database = UserDatabase.getInstance(application).userDatabaseDao
 
     fun fillUpDatabase() {
         if (database.isEmpty() == null) {
-            for (user in usersData.usersList) {
+            for (user in usersData.getUsersData()) {
                 database.insert(user)
             }
         }
@@ -26,5 +26,9 @@ class UsersListViewModel(application: Application) : AndroidViewModel(applicatio
 
     fun loadUsersData() {
         _userLiveData.value = database.getAll()
+    }
+
+    fun getUsersData(): LiveData<List<User>> {
+        return userLiveData
     }
 }
