@@ -55,8 +55,4 @@ class UsersData {
     fun getUsersData(): List<User> {
         return usersList
     }
-
-    fun addNewUser(user: User) {
-        usersList.add(user)
-    }
 }
