@@ -9,6 +9,7 @@ import com.example.mysocialnetwork.user.User
 
 interface OnUserClick {
     fun onClick(userId: Int)
+    fun onLongPress(user: User)
 }
 
 class UserAdapter(val userClick: OnUserClick) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -38,7 +39,7 @@ class UserAdapter(val userClick: OnUserClick) : RecyclerView.Adapter<RecyclerVie
     inner class UserViewHolder(private val binding: UserListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        @SuppressLint("UseCompatLoadingForDrawables")
+        @SuppressLint("UseCompatLoadingForDrawables", "NotifyDataSetChanged")
         fun bind(item: User) {
             with(binding) {
                 txtUsername.text = item.name
@@ -56,6 +57,11 @@ class UserAdapter(val userClick: OnUserClick) : RecyclerView.Adapter<RecyclerVie
 
             binding.userItem.setOnClickListener {
                 userClick.onClick(item.userId)
+            }
+
+            binding.userItem.setOnLongClickListener {
+                userClick.onLongPress(item)
+                return@setOnLongClickListener true
             }
         }
     }

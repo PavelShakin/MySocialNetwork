@@ -1,6 +1,7 @@
 package com.example.mysocialnetwork.activity
 
 import android.annotation.SuppressLint
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -10,7 +11,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.mysocialnetwork.R
 import com.example.mysocialnetwork.adapter.OnUserClick
 import com.example.mysocialnetwork.adapter.UserAdapter
+import com.example.mysocialnetwork.database.UserDatabase
 import com.example.mysocialnetwork.databinding.UserListActivityBinding
+import com.example.mysocialnetwork.user.User
 import com.example.mysocialnetwork.view_model.UsersListViewModel
 
 class UserListActivity : AppCompatActivity(), OnUserClick {
@@ -46,6 +49,26 @@ class UserListActivity : AppCompatActivity(), OnUserClick {
     override fun onClick(userId: Int) {
         val intent = Intent(this, UserActivity::class.java)
         intent.putExtra("id", userId)
+        startActivity(intent)
+    }
+
+    override fun onLongPress(user: User) {
+        val builder = android.app.AlertDialog.Builder(this)
+        builder.setMessage("Delete user?")
+            .setPositiveButton("Yes") { dialog, _ ->
+                dialogYesClick(user, dialog)
+            }
+            .setNegativeButton("No") { dialog, _ ->
+                dialog.dismiss()
+            }
+
+        builder.show()
+    }
+
+    private fun dialogYesClick(user: User, dialogInterface: DialogInterface) {
+        UserDatabase.getInstance(this).userDatabaseDao.delete(user)
+        dialogInterface.dismiss()
+        val intent = Intent(this, UserListActivity::class.java)
         startActivity(intent)
     }
 
