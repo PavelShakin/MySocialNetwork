@@ -43,4 +43,9 @@ class AddUserActivity : AppCompatActivity() {
             )
         )
     }
+
+    override fun onBackPressed() {
+        val setIntent = Intent(this, UserListActivity::class.java)
+        startActivity(setIntent)
+    }
 }

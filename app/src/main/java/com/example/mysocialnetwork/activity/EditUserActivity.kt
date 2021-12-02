@@ -70,4 +70,9 @@ class EditUserActivity : AppCompatActivity() {
 
         viewModel.updateUserInfo(user)
     }
+
+    override fun onBackPressed() {
+        val setIntent = Intent(this, UserActivity::class.java)
+        startActivity(setIntent)
+    }
 }
