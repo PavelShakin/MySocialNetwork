@@ -11,7 +11,6 @@ import com.example.mysocialnetwork.R
 import com.example.mysocialnetwork.adapter.OnUserClick
 import com.example.mysocialnetwork.adapter.UserAdapter
 import com.example.mysocialnetwork.databinding.UserListActivityBinding
-import com.example.mysocialnetwork.user.UsersData
 import com.example.mysocialnetwork.view_model.UsersListViewModel
 
 class UserListActivity : AppCompatActivity(), OnUserClick {
@@ -25,12 +24,12 @@ class UserListActivity : AppCompatActivity(), OnUserClick {
         binding = UserListActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initAdapter()
-        userAdapter.currentList = UsersData().getUsersData()
-
         viewModel = ViewModelProvider(this).get(UsersListViewModel::class.java)
         viewModel.fillUpDatabase()
         viewModel.loadUsersData()
+
+        initAdapter()
+        userAdapter.currentList = viewModel.getUsersData().value!!
 
         viewModel.getUsersData().observe(this, {
             userAdapter.currentList
