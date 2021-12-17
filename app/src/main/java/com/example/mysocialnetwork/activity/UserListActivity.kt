@@ -13,6 +13,7 @@ import com.example.mysocialnetwork.R
 import com.example.mysocialnetwork.adapter.OnUserClick
 import com.example.mysocialnetwork.adapter.UserAdapter
 import com.example.mysocialnetwork.database.UserDatabase
+import com.example.mysocialnetwork.database.UserDatabaseDao
 import com.example.mysocialnetwork.databinding.UserListActivityBinding
 import com.example.mysocialnetwork.user.User
 import com.example.mysocialnetwork.view_model.UsersListViewModel

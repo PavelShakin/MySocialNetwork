@@ -40,7 +40,6 @@ class AddUserActivity : AppCompatActivity() {
 
         viewModel.insertNewUser(
             User(
-                userId,
                 binding.txtSetName.text.toString(),
                 "@drawable/ic_launcher_background",
                 binding.txtSetWasOnline.text.toString(),

@@ -56,10 +56,8 @@ class EditUserActivity : AppCompatActivity() {
         val newHobby = findViewById<EditText>(R.id.txtEditHobby).text.toString()
         val newEmail = findViewById<EditText>(R.id.txtEditEmail).text.toString()
         val newStatus = findViewById<EditText>(R.id.txtEditStatus).text.toString()
-        val id = intent.extras?.getInt("id")
 
         val user = User(
-            id!!,
             newUserName,
             viewModel.userLiveData.value!!.profilePhoto,
             viewModel.userLiveData.value!!.wasOnline,
