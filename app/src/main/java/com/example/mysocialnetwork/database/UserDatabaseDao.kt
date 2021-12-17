@@ -7,20 +7,20 @@ import com.example.mysocialnetwork.user.User
 interface UserDatabaseDao {
 
     @Insert
-    fun insert(user: User)
+    suspend fun insert(user: User)
 
     @Update
-    fun update(user: User)
+    suspend fun update(user: User)
 
     @Query("SELECT * from users_info_table WHERE userId = :key")
-    fun get(key: Int): User?
+    suspend fun get(key: Int): User?
 
     @Query("SELECT * from users_info_table")
-    fun getAll(): List<User>
+    suspend fun getAll(): List<User>
 
     @Query("SELECT * from users_info_table LIMIT 1")
-    fun isEmpty(): User?
+    suspend fun isEmpty(): User?
 
     @Delete
-    fun delete(user: User)
+    suspend fun delete(user: User)
 }
