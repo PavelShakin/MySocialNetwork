@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
 import com.example.mysocialnetwork.R
 import com.example.mysocialnetwork.adapter.OnUserClick
 import com.example.mysocialnetwork.adapter.UserAdapter
@@ -15,6 +16,7 @@ import com.example.mysocialnetwork.database.UserDatabase
 import com.example.mysocialnetwork.databinding.UserListActivityBinding
 import com.example.mysocialnetwork.user.User
 import com.example.mysocialnetwork.view_model.UsersListViewModel
+import kotlinx.coroutines.launch
 
 class UserListActivity : AppCompatActivity(), OnUserClick {
     private lateinit var viewModel: UsersListViewModel
@@ -31,11 +33,9 @@ class UserListActivity : AppCompatActivity(), OnUserClick {
         viewModel.fillUpDatabase()
         viewModel.loadUsersData()
 
-        initAdapter()
-        userAdapter.currentList = viewModel.getUsersData().value!!
-
         viewModel.getUsersData().observe(this, {
-            userAdapter.currentList
+            initAdapter()
+            userAdapter.currentList = viewModel.getUsersData().value!!
         })
 
     }
@@ -66,9 +66,11 @@ class UserListActivity : AppCompatActivity(), OnUserClick {
     }
 
     private fun dialogYesClick(user: User, dialogInterface: DialogInterface) {
-        UserDatabase.getInstance(this).userDatabaseDao.delete(user)
+        viewModel.viewModelScope.launch {
+            UserDatabase.getInstance(applicationContext).userDatabaseDao.delete(user)
+        }
         dialogInterface.dismiss()
-        val intent = Intent(this, UserListActivity::class.java)
+        val intent = Intent(this, UserListActivity::class.java  )
         startActivity(intent)
     }
 

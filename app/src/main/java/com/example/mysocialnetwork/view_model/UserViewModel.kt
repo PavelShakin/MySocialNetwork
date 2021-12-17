@@ -4,8 +4,10 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.example.mysocialnetwork.database.UserDatabase
 import com.example.mysocialnetwork.user.User
+import kotlinx.coroutines.launch
 
 class UserViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -15,6 +17,8 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
     private val database = UserDatabase.getInstance(application).userDatabaseDao
 
     fun loadUserData(id: Int) {
-        _userLiveData.value = database.get(id)
+        viewModelScope.launch {
+            _userLiveData.value = database.get(id)
+        }
     }
 }

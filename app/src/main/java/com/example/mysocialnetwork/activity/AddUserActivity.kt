@@ -4,10 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
 import com.example.mysocialnetwork.database.UserDatabase
 import com.example.mysocialnetwork.databinding.AddUserActivityBinding
 import com.example.mysocialnetwork.user.User
 import com.example.mysocialnetwork.view_model.AddUserViewModel
+import kotlinx.coroutines.launch
 
 class AddUserActivity : AppCompatActivity() {
 
@@ -28,7 +30,12 @@ class AddUserActivity : AppCompatActivity() {
     }
 
     private fun saveNewUser() {
-        var userId = UserDatabase.getInstance(applicationContext).userDatabaseDao.getAll().size
+
+        var userId = 0
+        viewModel.viewModelScope.launch {
+            userId = UserDatabase.getInstance(applicationContext).userDatabaseDao.getAll().size
+        }
+
         userId++
 
         viewModel.insertNewUser(
