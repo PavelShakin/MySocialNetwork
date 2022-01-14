@@ -5,28 +5,28 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.mysocialnetwork.R
+import com.example.mysocialnetwork.databinding.UserActivityBinding
 import com.example.mysocialnetwork.view_model.UserViewModel
 
 class UserActivity : AppCompatActivity() {
+    private lateinit var binding: UserActivityBinding
     private lateinit var viewModel: UserViewModel
 
     @SuppressLint("UseCompatLoadingForDrawables", "SetTextI18n", "ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.user_activity)
+        binding = UserActivityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         val id = intent.extras?.getInt("id")
         viewModel.loadUserData(id!!)
 
         viewModel.userLiveData.observe(this, {
-            val imgViewIcon = findViewById<ImageView>(
-                resources.getIdentifier("imgProfileIcon", "id", packageName)
-            )
+            val imgViewIcon = binding.imgProfileIcon
             imgViewIcon.setImageDrawable(
                 getDrawable(
                     resources.getIdentifier(
@@ -37,29 +37,19 @@ class UserActivity : AppCompatActivity() {
                 )
             )
 
-            val txtViewName = findViewById<TextView>(
-                resources.getIdentifier("txtUserName", "id", packageName)
-            )
+            val txtViewName = binding.txtUserName
             txtViewName.text = it.name
 
-            val txtViewWasOnline = findViewById<TextView>(
-                resources.getIdentifier("txtWasOnline", "id", packageName)
-            )
+            val txtViewWasOnline = binding.txtWasOnline
             txtViewWasOnline.text = it.wasOnline
 
-            val txtViewStatus = findViewById<TextView>(
-                resources.getIdentifier("txtStatus", "id", packageName)
-            )
+            val txtViewStatus = binding.txtStatus
             txtViewStatus.text = "Status: " + it.status
 
-            val txtViewHobie = findViewById<TextView>(
-                resources.getIdentifier("txtHobby", "id", packageName)
-            )
+            val txtViewHobie = binding.txtEmail
             txtViewHobie.text = "Hobby: " + it.hobby
 
-            val txtViewEmail = findViewById<TextView>(
-                resources.getIdentifier("txtEmail", "id", packageName)
-            )
+            val txtViewEmail = binding.txtEmail
             txtViewEmail.text = it.email
         })
     }
@@ -85,7 +75,7 @@ class UserActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        val setIntent = Intent(this, UserListActivity::class.java)
+        val setIntent = Intent(this, BaseActivity::class.java)
         startActivity(setIntent)
     }
 }
