@@ -24,7 +24,7 @@ class AddUserActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(AddUserViewModel::class.java)
         binding.btnSaveUser.setOnClickListener {
             saveNewUser()
-            val intent = Intent(this, UserListActivity::class.java)
+            val intent = Intent(this, BaseActivity::class.java)
             startActivity(intent)
         }
     }
@@ -51,7 +51,7 @@ class AddUserActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        val setIntent = Intent(this, UserListActivity::class.java)
+        val setIntent = Intent(this, BaseActivity::class.java)
         startActivity(setIntent)
     }
 }

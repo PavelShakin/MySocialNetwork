@@ -13,13 +13,12 @@ import com.example.mysocialnetwork.R
 import com.example.mysocialnetwork.adapter.OnUserClick
 import com.example.mysocialnetwork.adapter.UserAdapter
 import com.example.mysocialnetwork.database.UserDatabase
-import com.example.mysocialnetwork.database.UserDatabaseDao
 import com.example.mysocialnetwork.databinding.UserListActivityBinding
 import com.example.mysocialnetwork.user.User
 import com.example.mysocialnetwork.view_model.UsersListViewModel
 import kotlinx.coroutines.launch
 
-class UserListActivity : AppCompatActivity(), OnUserClick {
+class BaseActivity : AppCompatActivity(), OnUserClick {
     private lateinit var viewModel: UsersListViewModel
     private lateinit var binding: UserListActivityBinding
     private var userAdapter = UserAdapter(this as OnUserClick)
@@ -71,7 +70,7 @@ class UserListActivity : AppCompatActivity(), OnUserClick {
             UserDatabase.getInstance(applicationContext).userDatabaseDao.delete(user)
         }
         dialogInterface.dismiss()
-        val intent = Intent(this, UserListActivity::class.java  )
+        val intent = Intent(this, BaseActivity::class.java  )
         startActivity(intent)
     }
 
